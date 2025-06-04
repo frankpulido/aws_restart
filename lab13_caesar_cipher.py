@@ -19,15 +19,52 @@ def caesar_cipher(text, shift):
             encrypted_text += char  # Non-alphabetic characters are not changed
     return encrypted_text
 
-print("Caesar Cipher Encryption Program")
-text = input("Enter the text to encrypt: ")
-shift = int(input("Enter the shift value (1-25): "))
+def caesar_cipher_decrypt(text, shift):
+    """Decrypts the text using Caesar cipher with the given shift."""
+    return caesar_cipher(text, -shift)  # Decrypting is just shifting in the opposite direction
 
-while not (1 <= shift <= 25):
-    shift = int(input("Invalid input. Please enter a number between 1 and 25: "))
 
-encrypted_text = caesar_cipher(text, shift)
-print("Encrypted text:", encrypted_text)
+# EXECUTION: Terminal input/output
+
+def main():
+    # This program demonstrates the use of a Caesar cipher for text encryption.
+    again = True
+    while again:
+        print()
+        print("Caesar Cipher Encryption Program")
+        text = input("Enter the text to encrypt: ")
+        shift = int(input("Enter the shift value (1-25): "))
+
+        while not (1 <= shift <= 25):
+            shift = int(input("Invalid input. Please enter a number between 1 and 25: "))
+
+        encrypted_text = caesar_cipher(text, shift)
+        print("Encrypted text:", encrypted_text)
+        print()
+
+        text = input("Enter the text to decrypt: ")
+        shift = int(input("Enter the shift value (1-25): "))
+        while not (1 <= shift <= 25):
+            shift = int(input("Invalid input. Please enter a number between 1 and 25: "))
+        decrypted_text = caesar_cipher_decrypt(text, shift)
+        print("Decrypted text:", decrypted_text)
+        print()
+        # Ask if the user wants to continue
+        continue_input = input("Do you want to run the program again? (yes/no): ").strip().lower()
+        if continue_input == 'yes':
+            again = True
+        elif continue_input == 'no':
+            print("Thank you for using the Caesar Cipher program!")
+            print()
+            again = False
+        else:
+            print("Invalid input. Exiting the program.")
+            print()
+            again = False
+
+# Run the main function if this script is executed directly
+if __name__ == "__main__":
+    main()
 
 # This program demonstrates the use of a Caesar cipher for text encryption.
 # It is one of the simplest and most widely known encryption techniques.
