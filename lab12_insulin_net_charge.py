@@ -7,23 +7,44 @@
 
 # Store the human preproinsulin sequence in a variable called preproinsulin
 with open("lab10_preproinsulin_seq_cleaned.txt", "r") as file:
-    preproInsulin = file.read().strip()
+    try:
+        preproInsulin = file.read().strip()
+    except FileNotFoundError:
+        print(f"File not found {file}")
+        quit()
+print("The sequence of human preproinsulin", len(preproInsulin), " : ", preproInsulin)
 
 # Store the remaining sequence elements of human insulin in variables
 with open("lab10_aa_lsinsulin_seq_clean.txt", "r") as file:
-    lsInsulin = file.read().strip()
+    try:
+        lsInsulin = file.read().strip()
+    except FileNotFoundError:
+        print(f"File not found {file}")
+        quit()
 print("The sequence of human ls insulin", len(lsInsulin), " : ", lsInsulin)
 
 with open("lab10_aa_ainsulin_seq_clean.txt", "r") as file:
-    aInsulin = file.read().strip()
+    try:
+        aInsulin = file.read().strip()
+    except FileNotFoundError:
+        print(f"File not found {file}")
+        quit()
 print("The sequence of human a insulin", len(aInsulin), " : ", aInsulin)
 
 with open("lab10_aa_binsulin_seq_clean.txt", "r") as file:
-    bInsulin = file.read().strip()
+    try:
+        bInsulin = file.read().strip()
+    except FileNotFoundError:
+        print(f"File not found {file}")
+        quit()
 print("The sequence of human b insulin", len(bInsulin), " : ", bInsulin)
 
 with open("lab10_aa_cinsulin_seq_clean.txt", "r") as file:
-    cInsulin = file.read().strip()
+    try:
+        cInsulin = file.read().strip()
+    except FileNotFoundError:
+        print(f"File not found {file}")
+        quit()
 print("The sequence of human c insulin", len(cInsulin), " : ", cInsulin)
 
 insulin = bInsulin + aInsulin  # Concatenate b and a chains and convert to lowercase
