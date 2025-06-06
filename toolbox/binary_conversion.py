@@ -47,18 +47,19 @@ def main():
                     break
         
         binary_maribel = maribel_method(my_number)
-        binary_iter = iterative_method(my_number)
+        binary_iterative = iterative_method(my_number)
         binary_builtin = builtin_method(my_number)
 
         print(f"Binary representation using Maribel's method : {binary_maribel}")
-        print(f"Binary representation using iterative method: {binary_iter}")
+        print(f"Binary representation using iterative method: {binary_iterative}")
         print(f"Binary representation using built-in function: {binary_builtin}")
         print()
 
         exit_input = input("Enter 0 to exit or any other key to continue: ").strip()
         if exit_input == '0':
             break
-    print("Exiting the program.\n")
+    print("Exiting the program. Thank you for using the binary conversion tool!")
+    print()
 
 if __name__ == "__main__":
     main()
