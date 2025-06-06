@@ -9,7 +9,7 @@ def readJsonFile(file_path):
     try:
         with open(file_path, 'r') as json_file:
             data = json.load(json_file)
-    except FileNotFoundError:
-        print(f"Error: The file {file_path} was not found.")
+    except Exception as e:
+        print(f"Error reading {file_path}: {e}")
         data = {}
     return data
